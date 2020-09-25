@@ -2,5 +2,5 @@ from flask import render_template
 from app import app
 
 @app.route('/')
-def index():
+def home():
     return render_template ('home.html')
