@@ -1,4 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>This is the comments section</h1>
+{% for comments in comments %}
+    <article class="media content-section">
+    
+    <div class="media-body">
+        <p class="article-content">{{ comments.comment }}</p>
+    </article>
+{% endfor %}
 {% endblock content %}
