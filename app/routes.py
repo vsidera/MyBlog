@@ -1,8 +1,7 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from .forms import RegistrationForm, LoginForm
+from flask import render_template, url_for, flash, redirect
 from app import app
-
-app.config['SECRET_KEY'] = '36a2b76e543b4e98f4f495c4'
+from app.forms import RegistrationForm, LoginForm
+from app.models import User, Post, Comments
 
 @app.route('/')
 def home():
