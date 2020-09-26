@@ -31,11 +31,10 @@ class Post(db.Model):
         return f"Post('{self.title}', '{self.date_posted}')"
 
 class Comments(db.Model):
-    __tablename__='comments'
     id = db.Column(db.Integer, primary_key=True)
-    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
+    pitch_id = db.Column(db.Integer, db.ForeignKey('post.id'))
     comment = db.Column(db.String(), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
         return f"Comments('{self.comment}', '{self.user_id}')"
