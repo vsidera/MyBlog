@@ -1,5 +1,17 @@
 {% extends 'base.html'%}
 {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>random quotes</h1>
+                <!-- quote -->
+                {% for thing in quote%}
+                <p class="box text-center pr-3 pl-3">{{thing.text}} ~ {{thing.author}} </p>
+                {% endfor %}
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
     {% for post in posts %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">

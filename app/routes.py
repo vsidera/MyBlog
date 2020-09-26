@@ -6,13 +6,15 @@ from app import app, db, bcrypt
 from app.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from app.models import User, Post, Comments
 from flask_login import login_user, current_user, logout_user, login_required
+from app.requests import get_quote
 
 
 @app.route("/")
 @app.route("/home")
 def home():
+    quote = get_quote()
     posts = Post.query.all()
-    return render_template('home.html', posts=posts)
+    return render_template('home.html', quote=quote, posts=posts)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
