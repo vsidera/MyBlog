@@ -136,5 +136,9 @@ def delete_post(post_id):
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('home'))
 
+@app.route("/comments")
+def comments():
+    comments = Comments.query.all()
+    return render_template('comments.html',comments=comments)
   
 
