@@ -157,3 +157,9 @@ def new_comment():
                            form=form, legend='New Comment')    
   
 
+@app.route("/del_comment")
+def del_comment():
+    flash('Your post has been deleted!', 'success')
+    return redirect(url_for('home'))
+
+

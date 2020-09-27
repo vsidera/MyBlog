@@ -5,6 +5,7 @@
     
     <div class="media-body">
         <p class="article-content">{{ comments.comment }}</p>
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('del_comment') }}">Delete Comment</a>
     </article>
 {% endfor %}
 {% endblock content %}
